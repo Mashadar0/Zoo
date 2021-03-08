@@ -1,11 +1,22 @@
 package animals;
 
+import aviary.Size;
+import exeption.WrongFoodException;
 import food.Food;
 import food.Meat;
 
 public class Carnivorous extends Animal{
 
-    public boolean eat(Food food){
-        return food instanceof Meat;
+    public String getName() {
+        return name;
+    }
+    public Size getAnimalSize() {
+        return animalSize;
+    }
+
+    public boolean eat(Food food) throws WrongFoodException {
+        if (food instanceof Meat) {
+            return true;
+        } else throw new WrongFoodException();
     }
 }
