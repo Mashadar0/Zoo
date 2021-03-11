@@ -13,4 +13,8 @@ public abstract class Animal {
     public abstract Size getAnimalSize();
 
     public abstract boolean eat(Food food) throws WrongFoodException;
+    private String title;
+    public abstract String getTitle();
+
+    public abstract boolean eat(Food food);
 }

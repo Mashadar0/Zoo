@@ -1,6 +1,4 @@
 import animals.*;
-import aviary.Aviary;
-import aviary.Size;
 import food.*;
 
 public class Zoo {
@@ -8,37 +6,30 @@ public class Zoo {
     public static void main(String[] args) {
 
         Worker worker = new Worker();
-        Tiger tiger = new Tiger("Tiger");
-        Duck duck = new Duck("Duck");
-        Animal shark = new Shark("Shark");
-        Deer deer = new Deer("Deer");
-        Eagle eagle = new Eagle("Eagle");
-        Animal elephant = new Elephant("Elephant");
-        Food meat1 = new Meat1();
-        Food meat2 = new Meat2();
-        Food grass1 = new Grass1();
-        Food grass2 = new Grass2();
+        Animal[] animals = {new Deer(), new Duck(), new Eagle(), new Elephant(), new Tiger(), new Shark()};
+        Animal[] animalsWithVoice  = {new Deer(), new Duck(), new Eagle(), new Elephant(), new Tiger()};
+        Food[] foods = {new Flower(), new Leaf(), new Sprat(), new Steak()};
 
-        System.out.println("Worker feed tiger with meat");
-        worker.feed(tiger, meat1);
-        System.out.println("Worker feed duck with meat");
-        worker.feed(duck, meat2);
-        System.out.println("Worker feed shark with grass");
-        worker.feed(shark,grass1);
-        System.out.println("Worker feed deer with grass");
-        worker.feed(deer,grass2);
+        for (Animal a :
+                animals) {
+            for (Food f :
+                    foods) {
+                System.out.println("Worker feed " + a.getTitle() + " with " + f.getTitle());
+                worker.feed(a, f);
+            }
+            System.out.println("\n");
+        }
 
-        System.out.println("Worker make the deer voice");
-        worker.getVoice(deer);
-        System.out.println("Worker make the duck voice");
-        worker.getVoice(duck);
-        System.out.println("Worker make the tiger voice");
-        worker.getVoice(tiger);
-        System.out.println("Worker make the eagle voice");
-        worker.getVoice(eagle);
+        for (Animal a :
+                animalsWithVoice) {
+            System.out.println("Worker make the " + a.getTitle() + "voice");
+            worker.getVoice((Voice) a);
+        }
+
+        System.out.println("\n");
 
         System.out.println("It's lake. Here we can see that:");
-        Swim[] lake = {new Elephant("Elephant1"), new Deer("Deer1"), new Elephant("Elephant2")};
+        Swim[] lake = {new Elephant(), new Deer(), new Elephant()};
 
         for (Swim swim : lake) {
             swim.swim();
