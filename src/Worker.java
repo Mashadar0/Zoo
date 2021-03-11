@@ -11,19 +11,7 @@ public class Worker {
         }
     }
 
-    public void getVoice(Deer animal){
-        System.out.println(animal.voice());
-    }
-    public void getVoice(Duck animal){
-        System.out.println(animal.voice());
-    }
-    public void getVoice(Eagle animal){
-        System.out.println(animal.voice());
-    }
-    public void getVoice(Elephant animal){
-        System.out.println(animal.voice());
-    }
-    public void getVoice(Tiger animal){
+    public void getVoice(Voice animal){
         System.out.println(animal.voice());
     }
 }
