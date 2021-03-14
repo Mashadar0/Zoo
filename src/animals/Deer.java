@@ -4,6 +4,7 @@ import aviary.Size;
 
 public class Deer extends Herbivore implements Run, Swim, Voice{
 
+    public Deer(){}
     public Deer(String name){
         this.name = name;
         animalSize = Size.MEDIUM;
@@ -29,5 +30,14 @@ public class Deer extends Herbivore implements Run, Swim, Voice{
     }
     public void sounds(){
         System.out.println("*deer sounds*");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return name.equals((String) obj);
+    }
+    @Override
+    public int hashCode() {
+        return (int) name.charAt(0);
     }
 }

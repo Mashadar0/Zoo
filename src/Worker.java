@@ -12,7 +12,7 @@ public class Worker {
                 System.out.println("Animal don't eat it");
             }
         } catch (WrongFoodException exception){
-            System.out.println("exception " + exception);
+            System.out.println(exception.getMessage());
         }
     }
 

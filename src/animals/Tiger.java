@@ -4,6 +4,7 @@ import aviary.Size;
 
 public class Tiger extends Carnivorous implements Run, Swim, Voice{
 
+    public Tiger(){}
     public Tiger(String name){
         this.name = name;
         animalSize = Size.MEDIUM;
@@ -30,5 +31,14 @@ public class Tiger extends Carnivorous implements Run, Swim, Voice{
     }
     public void sounds(){
         System.out.println("*tiger sounds*");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return name.equals((String) obj);
+    }
+    @Override
+    public int hashCode() {
+        return (int) name.charAt(0);
     }
 }

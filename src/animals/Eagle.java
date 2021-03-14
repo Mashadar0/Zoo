@@ -4,6 +4,7 @@ import aviary.Size;
 
 public class Eagle extends Carnivorous implements Fly, Voice{
 
+    public Eagle(){}
     public Eagle(String name){
         this.name = name;
         animalSize = Size.SMALL;
@@ -23,5 +24,14 @@ public class Eagle extends Carnivorous implements Fly, Voice{
     }
     public void sounds(){
         System.out.println("*eagle sounds*");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return name.equals((String) obj);
+    }
+    @Override
+    public int hashCode() {
+        return (int) name.charAt(0);
     }
 }

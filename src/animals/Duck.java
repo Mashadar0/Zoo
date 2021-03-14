@@ -4,6 +4,7 @@ import aviary.Size;
 
 public class Duck extends Herbivore implements Swim, Fly, Voice{
 
+    public Duck(){}
     public Duck(String name){
         this.name = name;
         animalSize = Size.MINIMAL;
@@ -30,5 +31,14 @@ public class Duck extends Herbivore implements Swim, Fly, Voice{
     }
     public void sounds(){
         System.out.println("*duck sounds*");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return name.equals((String) obj);
+    }
+    @Override
+    public int hashCode() {
+        return (int) name.charAt(0);
     }
 }

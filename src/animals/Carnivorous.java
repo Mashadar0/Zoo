@@ -1,11 +1,16 @@
 package animals;
 
+import aviary.AnimalDiet;
 import aviary.Size;
 import exeption.WrongFoodException;
 import food.Food;
 import food.Meat;
 
 public abstract class Carnivorous extends Animal{
+
+    public AnimalDiet getAnimalDiet(){
+        return AnimalDiet.CARNIVOROUS;
+    }
 
     public String getName() {
         return name;

@@ -1,4 +1,5 @@
 import animals.*;
+import aviary.*;
 import food.*;
 
 public class Zoo {
@@ -36,16 +37,14 @@ public class Zoo {
         }
 
         System.out.println("First aviary");
-        Aviary<Carnivorous> carnivorousAviary = new Aviary<>(Size.MEDIUM);
-        carnivorousAviary.setAnimal(new Tiger("Cucumber"));
-        carnivorousAviary.setAnimal(new Tiger("Carrot"));
-        carnivorousAviary.setAnimal(new Eagle("Tomato"));
+        Aviary<Object> carnivorousAviary = new Aviary<>(Size.MEDIUM);
+        carnivorousAviary.setAnimal("Cucumber", new Tiger("Cucumber"));
+        carnivorousAviary.setAnimal("Carrot", new Tiger("Carrot"));
+        carnivorousAviary.setAnimal("Tomato", new Eagle("Tomato"));
+        carnivorousAviary.setAnimal("Buratino", new Deer("Buratino"));
+        carnivorousAviary.setAnimal("Leaf", new Leaf());
         carnivorousAviary.removeAnimal("Cucumber");
         carnivorousAviary.getAnimal("Carrot");
 
-        System.out.println("Second aviary");
-        Aviary<Herbivore> herbivoreAviary = new Aviary<>(Size.LARGE);
-        herbivoreAviary.setAnimal(new Elephant("Buratino"));
-        herbivoreAviary.setAnimal(new Deer("Valera"));
     }
 }
